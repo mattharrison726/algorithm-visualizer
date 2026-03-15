@@ -4,9 +4,14 @@ import Visualizer from './components/Visualizer';
 
 const App: React.FC = () => {
     return (
-        <div className="App">
-            <h1>Algorithm Visualizer</h1>
-            <Visualizer />
+        <div className="app">
+            <header className="app-header">
+                <h1>Algorithm Visualizer</h1>
+                <p>Watch sorting algorithms work step by step</p>
+            </header>
+            <main>
+                <Visualizer />
+            </main>
         </div>
     );
 };
