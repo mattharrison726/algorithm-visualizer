@@ -8,14 +8,8 @@ export interface Algorithm {
     };
 }
 
-export interface VisualizationProps {
-    algorithm: Algorithm;
-    data: number[];
-    speed: number;
-}
-
-export interface AppState {
-    algorithms: Algorithm[];
-    selectedAlgorithm: Algorithm | null;
-    visualizationData: number[];
+export interface Step {
+    array: number[];
+    comparing: number[];
+    swapped: number[];
 }
