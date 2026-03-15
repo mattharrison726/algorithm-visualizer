@@ -1,65 +1,57 @@
 # Algorithm Visualizer
 
-This project is an Algorithm Visualizer application that consists of a frontend built with React and TypeScript, and a backend powered by FastAPI in Python. The application aims to provide an interactive platform for visualizing various algorithms.
+Watch sorting algorithms work step by step — pick an algorithm, generate a random array, and play through each comparison and swap as an animated bar chart.
 
-## Project Structure
+**Supported algorithms:** Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort
 
-The project is organized into two main directories: `backend` and `frontend`.
+---
 
-### Backend
+## Running with Docker (recommended)
 
-- **app**: Contains the FastAPI application code.
-  - **main.py**: Entry point of the FastAPI application.
-  - **api/routes.py**: Defines the API routes for the application.
-  - **core/config.py**: Contains configuration settings for the FastAPI application.
-  - **models**: Package for model definitions.
-- **requirements.txt**: Lists the dependencies required for the backend.
-- **README.md**: Documentation specific to the backend.
+The easiest way. You only need [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed.
 
-### Frontend
+```bash
+docker compose up --build
+```
 
-- **src**: Contains the source code for the React application.
-  - **App.tsx**: Main component of the React application.
-  - **index.tsx**: Entry point for the React application.
-  - **components/Visualizer.tsx**: Component that visualizes algorithms.
-  - **styles/App.css**: CSS styles for the React application.
-  - **types/index.ts**: TypeScript types and interfaces used throughout the frontend.
-- **public**: Contains static files.
-  - **index.html**: Main HTML file for the React application.
-- **package.json**: Configuration file for npm.
-- **tsconfig.json**: Configuration file for TypeScript.
-- **README.md**: Documentation specific to the frontend.
+Then open **http://localhost** in your browser. That's it.
 
-## Setup Instructions
+To stop it, press `Ctrl+C`.
 
-### Backend Setup
+---
 
-1. Navigate to the `backend` directory.
-2. Install the required dependencies using:
-   ```
-   pip install -r requirements.txt
-   ```
-3. Run the FastAPI application:
-   ```
-   uvicorn app.main:app --reload
-   ```
+## Running locally (for developers)
 
-### Frontend Setup
+You'll need **Python 3.10+** and **Node.js 18+** installed.
 
-1. Navigate to the `frontend` directory.
-2. Install the required dependencies using:
-   ```
-   npm install
-   ```
-3. Start the React application:
-   ```
-   npm start
-   ```
+**Terminal 1 — backend:**
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
 
-## Usage
+**Terminal 2 — frontend:**
+```bash
+cd frontend
+npm install
+npm start
+```
 
-Once both the backend and frontend are running, you can access the application in your web browser. The frontend will communicate with the backend to fetch and visualize algorithm data.
+Then open **http://localhost:3000**.
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any enhancements or bug fixes.
+## How to use it
+
+1. Pick an algorithm from the dropdown
+2. Click **Generate Steps** to send the array to the backend
+3. Click **Play** to watch the sort animate
+4. Use the speed slider to slow it down or speed it up
+5. Click **New Array** to shuffle and start over
+
+Bar colors during playback:
+- **Blue** — unsorted
+- **Yellow** — currently being compared
+- **Red** — being swapped
+- **Green** — fully sorted
