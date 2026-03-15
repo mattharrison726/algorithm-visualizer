@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Algorithm, Step } from '../types';
 
-const API = 'http://localhost:8000';
+const API = '';
 const BAR_COUNT = 20;
 
 function randomArray(n: number): number[] {
